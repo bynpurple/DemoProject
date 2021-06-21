@@ -17,14 +17,21 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("nuxt-service")
+                .description("API Swagger")
+                .build();
+    }
+
     @Bean
-    public Docket apiDocket() {
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .enable(true)
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.ant("/api/**"))
-                .build()
-                .enable(true);
+                .build();
     }
 //    @Override
 //    public void addViewControllers(ViewControllerRegistry registry) {

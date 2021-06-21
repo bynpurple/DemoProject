@@ -12,8 +12,4 @@ import java.util.Optional;
 @Repository
 public interface JobsRepository extends JpaRepository<Jobs, String>, QuerydslPredicateExecutor<Jobs> {
     Optional<Jobs> findById(String id);
-
-    List<Jobs> findByIdIn(String id);
-
-    List<Jobs> findByRegEmpNo(String id);
 }
