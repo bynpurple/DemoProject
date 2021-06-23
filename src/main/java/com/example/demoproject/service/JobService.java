@@ -31,7 +31,7 @@ public class JobService {
 
     @Transactional
     public Jobs delete(Jobs jobs) {
-        jobs.setUseYn('N');
+        jobs.setUseYn("N");
         return jobsRepository.save(jobs);
     }
 
@@ -43,7 +43,8 @@ public class JobService {
     }
 
     public RtnObject<Page<Jobs>> searchPage(SearchJobs search, Pageable page) {
-        return new RtnObject(jobsRepository.searchPage(search, page), true, "Job Page");
+        RtnObject rtn = new RtnObject(jobsRepository.searchPage(search, page), true, "Job Page");
+        return rtn;
     }
 
     public RtnObject<List<Jobs>> searchList(SearchJobs search, Sort sort) {

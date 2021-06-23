@@ -25,7 +25,7 @@ public interface JobsRepository extends JpaRepository<Jobs, String>, QuerydslPre
 
         QJobs qJobs = QJobs.jobs;
 
-        qJobs.useYn.eq('Y');
+        qJobs.useYn.eq("Y");
 
         if(!StringUtils.isNullOrEmpty(search.getSearchName())) {
             booleanBuilder.and(qJobs.jobName.contains(search.getSearchName()));
@@ -40,7 +40,7 @@ public interface JobsRepository extends JpaRepository<Jobs, String>, QuerydslPre
 
     default Page<Jobs> searchPage(SearchJobs search, Pageable page) {
         BooleanBuilder booleanBuilder = search(search);
-        return this.findAll(booleanBuilder, (Pageable) page);
+        return findAll(booleanBuilder, (Pageable) page);
     }
 
     default List<Jobs> searchList(SearchJobs search, Sort sort) {

@@ -11,12 +11,12 @@ public class JobsAddRequest {
     private String jobId;
     private String jobName;
     private String jobCategoryId;
-    private String regEmpNo;
+    private String regEmpId;
 
     public Jobs convertJob() {
         Jobs ret = new Jobs();
         if(!StringUtils.isNullOrEmpty(jobId)) ret.setId(jobId);
-        if(!StringUtils.isNullOrEmpty(regEmpNo)) ret.setRegEmpNo(regEmpNo);
+        if(!StringUtils.isNullOrEmpty(regEmpId)) ret.setRegEmpId(regEmpId);
         ret.setJobName(jobName);
         if(!StringUtils.isNullOrEmpty(jobCategoryId)) ret.setJobCategoryId(jobCategoryId);
 
