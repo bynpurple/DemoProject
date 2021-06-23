@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/com/example/demoproject/domain/job/JobCategories.java
+/src/main/java/com/example/demoproject/domain/job/Jobs.java
+/src/main/java/com/example/demoproject/domain/employee/NuxtEmployees.java
+/src/main/java/com/example/demoproject/protocol/response/common/RtnObject.java
+/src/main/java/com/example/demoproject/protocol/request/search/SearchJobs.java
