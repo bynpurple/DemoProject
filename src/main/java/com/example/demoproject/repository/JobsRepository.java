@@ -45,6 +45,6 @@ public interface JobsRepository extends JpaRepository<Jobs, String>, QuerydslPre
 
     default List<Jobs> searchList(SearchJobs search, Sort sort) {
         BooleanBuilder booleanBuilder = search(search);
-        return (List<Jobs>) findAll(booleanBuilder, sort);
+        return (List<Jobs>) findAll(booleanBuilder, sort).iterator();
     }
 }
